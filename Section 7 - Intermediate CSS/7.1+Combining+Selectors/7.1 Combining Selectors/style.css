@@ -1,0 +1,25 @@
+/* Write your code here: */
+
+/*1. use the Group Selector to make h1 and h2 blue violet*/
+h1, h2 {
+    color: blueviolet;
+}
+
+.box > p { /*only option because a bunch of ps, class="done"
+    need to use .box because there can be multiple divs*/
+    color:firebrick;
+}
+
+/*Descendant combination: li must be a descendant of .box*/
+/*can't use child selector because more than one level deep*/
+.box li{
+    color: blue;
+}
+
+li.done {
+    color: seagreen;
+}
+
+ul p.done {
+    font-size: 0.5rem;
+}
