@@ -13,7 +13,15 @@
     .container {
       color: white;
       border: 5px solid gold;
-      display: flex;
+      /* inline-flex makes the width as big as the biggest element width */
+      display: inline-flex;
+      flex-direction: column; /* now lines from top to bottom and makes a COLUMN */
+      /* width: 50px; */
+      /* flex-basis is not for the parent... it works on each of the elements inside the parent */
+    }
+
+    .container > * {
+      flex-basis: 100px;
     }
 
     /*
