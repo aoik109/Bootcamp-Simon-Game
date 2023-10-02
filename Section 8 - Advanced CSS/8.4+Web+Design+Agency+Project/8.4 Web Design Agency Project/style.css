@@ -10,7 +10,63 @@ body {
   flex: 1;
 }
 
-.logo {
+footer {
+  text-align: right;
+  color: navy;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+#creative {
+  color: midnightblue;
+}
+
+.tile-image {
+  float: left;
+  height: 200px;
+
+  margin-right: 50px;
+}
+
+.card {
+  width: 45%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+@media (max-width: 680px) {
+  .logo {
+    width: 100px;
+  }
+
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+    /* not sure why but we also set it as a block */ display: block;
+    margin-bottom: 50px;
+  }
+
+  .tile-image {
+    margin-bottom: 20px;
+    display: inline;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+/* .logo {
   display: block;
   padding-bottom: 50px;
   padding-top: 0;
@@ -75,6 +131,7 @@ footer {
   }
 
   .card {
+    display: block;
     width: 100%;
   }
 
@@ -96,4 +153,4 @@ footer {
   .card-text, .right > p {
     margin-bottom: 5rem;
   }
-}
+} */
