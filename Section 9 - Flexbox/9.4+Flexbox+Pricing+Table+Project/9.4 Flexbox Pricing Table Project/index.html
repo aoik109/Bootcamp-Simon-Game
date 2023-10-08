@@ -15,12 +15,15 @@
       display: flex;;
       gap: 15px;
       height: 100vh; /*NEED TO SET HEIGHT OF CONTAINER FOR ALIGN ITEMS TO WORK*/
+      /* 100vh is FULL height */
       justify-content: center;
       align-items: center;
     }
 
     .pricing-plan {
+      /* equal in width, can grow and shrink */
       flex: 1;
+      /* limiting the width, do not take up the full width */
       max-width: 400px;
       border-radius: 5px;
       background-color: #f2f2f2;
