@@ -1,3 +1,21 @@
 .heading {
-    font-family: 
+    font-family: 'DM Sans', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Open Sans', sans-serif;
+font-weight: 515;
+}
+
+.title {
+    font-size: 60px;
+    color: white;
+    font-weight: 550;
+}
+
+.title-text {
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 545;
+    font-size: 30px;
 }
