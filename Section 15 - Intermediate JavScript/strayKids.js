@@ -8,3 +8,6 @@ if (strayKids.includes(name)) {
 } else {
     alert("Sorry, " + name + ". You are NOT in Stray Kids...");
 }
+
+// How to create a simple node.js server
+// creates server where you can run on your browser
