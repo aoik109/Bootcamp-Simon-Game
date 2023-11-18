@@ -19,3 +19,19 @@ if (randomNumber1 === 1) {
 } else {
     player1Dice.setAttribute("src", "./images/dice6.png");
 }
+
+// depending on the random number, change the img for player 2 dice
+var player2Dice = document.querySelector(".img2");
+if (randomNumber2 === 1) {
+    player2Dice.setAttribute("src", "./images/dice1.png");
+} else if (randomNumber2 === 2) {
+    player2Dice.setAttribute("src", "./images/dice2.png");
+} else if (randomNumber2 === 3) {
+    player2Dice.setAttribute("src", "./images/dice3.png");
+} else if (randomNumber2 === 4) {
+    player2Dice.setAttribute("src", "./images/dice4.png");
+} else if (randomNumber2 === 5) {
+    player2Dice.setAttribute("src", "./images/dice5.png");
+} else {
+    player2Dice.setAttribute("src", "./images/dice6.png");
+}
