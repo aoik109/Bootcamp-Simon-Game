@@ -35,3 +35,14 @@ if (randomNumber2 === 1) {
 } else {
     player2Dice.setAttribute("src", "./images/dice6.png");
 }
+
+// announce winner
+var results = document.querySelector("h1");
+if (randomNumber1 > randomNumber2) {
+    // player 1 wins
+    results.innerHTML = "<img class='flag' src='./images/flag.svg'> Player 1 Wins!";
+} else if (randomNumber1 < randomNumber2) {
+    // player 2 wins
+} else {
+    // draw
+}
