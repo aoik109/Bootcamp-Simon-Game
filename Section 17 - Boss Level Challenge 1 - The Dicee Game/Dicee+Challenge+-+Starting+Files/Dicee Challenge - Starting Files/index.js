@@ -43,6 +43,8 @@ if (randomNumber1 > randomNumber2) {
     results.innerHTML = "<img class='flag' src='./images/flag.svg'> Player 1 Wins!";
 } else if (randomNumber1 < randomNumber2) {
     // player 2 wins
+    results.innerHTML = "Player 2 Wins! <img class='flag' src='./images/flag.svg'>";
 } else {
     // draw
+    results.innerHTML = "Draw!";
 }
