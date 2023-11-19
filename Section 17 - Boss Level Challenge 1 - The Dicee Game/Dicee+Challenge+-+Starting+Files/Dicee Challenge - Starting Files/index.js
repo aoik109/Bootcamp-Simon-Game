@@ -5,8 +5,10 @@ var randomNumber1 = Math.floor(Math.random() * 6) + 1;
 var randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
 // depending on the random number, change the img for player 1 dice
-var player1Dice = document.querySelector(".img1");
-if (randomNumber1 === 1) {
+var randomDice1Image = "dice" + randomNumber1 + ".png";
+var randomDice1Source = "images/" + randomDice1Image;
+document.querySelector(".img1").setAttribute("src", randomDice1Source);
+/*if (randomNumber1 === 1) {
     player1Dice.setAttribute("src", "./images/dice1.png");
 } else if (randomNumber1 === 2) {
     player1Dice.setAttribute("src", "./images/dice2.png");
@@ -18,11 +20,12 @@ if (randomNumber1 === 1) {
     player1Dice.setAttribute("src", "./images/dice5.png");
 } else {
     player1Dice.setAttribute("src", "./images/dice6.png");
-}
+}*/
 
 // depending on the random number, change the img for player 2 dice
-var player2Dice = document.querySelector(".img2");
-if (randomNumber2 === 1) {
+var randomDice2Source = "./images/dice" + randomNumber2 + ".png";
+document.querySelector(".img2").setAttribute("src", randomDice2Source);
+/*if (randomNumber2 === 1) {
     player2Dice.setAttribute("src", "./images/dice1.png");
 } else if (randomNumber2 === 2) {
     player2Dice.setAttribute("src", "./images/dice2.png");
@@ -34,7 +37,7 @@ if (randomNumber2 === 1) {
     player2Dice.setAttribute("src", "./images/dice5.png");
 } else {
     player2Dice.setAttribute("src", "./images/dice6.png");
-}
+}*/
 
 // announce winner
 var results = document.querySelector("h1");
