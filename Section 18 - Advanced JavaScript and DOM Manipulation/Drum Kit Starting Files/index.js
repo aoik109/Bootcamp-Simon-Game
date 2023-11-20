@@ -42,6 +42,10 @@ for (var i = 0; i < buttons.length; i++) {
             default:
                 break;
         }
+
+        document.addEventListener("keydown", function() {
+            alert("I just pressed a key");
+        })
         // var audio = new Audio("./sounds/tom-1.mp3");
         // audio.play();
 
