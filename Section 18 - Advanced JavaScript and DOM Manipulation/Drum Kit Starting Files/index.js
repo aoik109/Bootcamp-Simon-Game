@@ -44,7 +44,7 @@ function playSound(letter) {
 }
 
 // event istener for the keyboard press
-document.addEventListener("keydown", function() {
+document.addEventListener("keydown", function(event) {
     playSound(event.key);});
 
 // event listener to each button
