@@ -43,8 +43,10 @@ for (var i = 0; i < buttons.length; i++) {
                 break;
         }
 
-        document.addEventListener("keydown", function() {
-            alert("I just pressed a key");
+        document.addEventListener("keydown", function(event) {
+            // adding parameter "event" to the function allows us to tap into it
+
+            console.log(event);
         })
         // var audio = new Audio("./sounds/tom-1.mp3");
         // audio.play();
