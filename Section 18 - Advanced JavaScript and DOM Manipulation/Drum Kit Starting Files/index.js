@@ -43,16 +43,27 @@ function playSound(letter) {
         }
 }
 
+// want the button to flash when flashed & when key is pressed
+// input is key that was pressed
+function buttonAnimation(currentKey) {
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+}
+
 // event istener for the keyboard press
 document.addEventListener("keydown", function(event) {
-    playSound(event.key);});
+    playSound(event.key);
+    buttonAnimation(event.key);
+});
 
 // event listener to each button
 for (var i = 0; i < buttons.length; i++) {
     // add event listener to each button
     buttons[i].addEventListener("click", function() {
         playSound(this.innerHTML);
+        buttonAnimation(this.innerHTML);
     });
+}
 
 /////////////////////////////////////////////////////////////////////
 // adding parameter "event" to the function allows us to tap into it
@@ -70,7 +81,7 @@ for (var i = 0; i < buttons.length; i++) {
 
 
     // document.querySelectorAll(".drum")[i].addEventListener....
-}
+
 
 // function handleClick() {
 //     alert("I got clicked")
