@@ -48,6 +48,11 @@ function playSound(letter) {
 function buttonAnimation(currentKey) {
     var activeButton = document.querySelector("." + currentKey);
     activeButton.classList.add("pressed");
+
+    // set a delay before removing the pressed CSS
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100);
 }
 
 // event istener for the keyboard press
