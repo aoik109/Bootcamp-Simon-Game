@@ -1,9 +1,8 @@
 var buttons = document.querySelectorAll(".drum");
-for (var i = 0; i < buttons.length; i++) {
-    // add event listener to each button
-    buttons[i].addEventListener("click", function() {
-        var buttonInnerHTML = this.innerHTML;
-        switch (buttonInnerHTML) {
+
+function playSound(letter) {
+    // var buttonInnerHTML = this.innerHTML;
+        switch (letter) {
             case "w":
                 var tom1 = new Audio("./sounds/tom-1.mp3");
                 tom1.play();
@@ -42,25 +41,28 @@ for (var i = 0; i < buttons.length; i++) {
             default:
                 break;
         }
+}
 
-        document.addEventListener("keydown", function(event) {
-            // adding parameter "event" to the function allows us to tap into it
+// event istener for the keyboard press
+document.addEventListener("keydown", function() {
+    playSound(KeyboardEvent.key);});
 
-            console.log(event);
-        })
+// event listener to each button
+for (var i = 0; i < buttons.length; i++) {
+    // add event listener to each button
+    buttons[i].addEventListener("click", function() {
+        playSound(this.innerHTML);
+    });
+
+/////////////////////////////////////////////////////////////////////
+// adding parameter "event" to the function allows us to tap into it
+// console.log(event);
+
         // var audio = new Audio("./sounds/tom-1.mp3");
         // audio.play();
 
         // identity of the button that triggered the event listener
         // this.style.color = "white";
-    });
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////
 /*document.querySelector("button").addEventListener("click", function() {
     alert("I got clicked!");
 });*/
