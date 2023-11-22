@@ -14,9 +14,13 @@ $("button").click(function() {
     $("h1").toggleClass("purple-title");
 });
 
-$("input").keypress(function(event) {
-    console.log(event.key);
+$(document).keypress(function(event) {
+    $("h1").text(event.key);
 });
+
+// $("input").keypress(function(event) {
+//     console.log(event.key);
+// });
 
 
 
