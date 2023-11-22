@@ -14,11 +14,17 @@ $("button").click(function() {
     $("h1").toggleClass("purple-title");
 });
 
-$(document).on("keydown", function(event) {
-    if (event.which === "A") {
-        $("h1").text("You clicked 'A'"); 
-    }
+$("input").keypress(function(event) {
+    console.log(event.key);
 });
+
+
+
+// $(document).on("keydown", function(event) {
+//     if (event.which === "A") {
+//         $("h1").text("You clicked 'A'"); 
+//     }
+// });
 
 // check if jQuery is ready -> once ready, the anonomyous function will be called
 // $(document).ready(function() {
