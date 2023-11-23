@@ -36,5 +36,9 @@ function playSound(randomButtonId) {
 }
 
 function buttonAnimation(randomButtonId) {
-
+    var idName = "#" + randomButtonId;
+    $(idName).addClass("pressed");
+    setTimeout(function() {
+        $(idName).removeClass("pressed");
+    }, 200);
 }
