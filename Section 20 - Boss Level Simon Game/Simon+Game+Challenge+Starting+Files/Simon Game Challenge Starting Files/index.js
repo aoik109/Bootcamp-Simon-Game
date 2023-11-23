@@ -21,28 +21,30 @@ function playGame() {
 // picks random button, adds to correctOrder array and plays sound
 function pickAndPlayButton() {
     var randomIndex = Math.floor(Math.random() * buttons.length);
-    var randomButtonId = buttons[randomIndex].getAttribute("id")''
+    var randomButtonId = buttons[randomIndex].getAttribute("id");
     correctOrder.push(randomButtonId);
     playSound(randomButtonId);
 }
 
 function playSound(randomButtonId) {
-    var audioFile = 
+    var audioFileName = randomButtonId + ".mp3";
+    var audioFile = new Audio("./sounds/" + audioFileName);
     switch (randomButtonId) {
         case "green":
-            
+            // TODO add animation to all buttons
+            audioFile.play();
             break;
 
         case "red":
-            
+            audioFile.play();
             break;
 
         case "yellow":
-            
+            audioFile.play();
             break;
 
         case "blue":
-            
+            audioFile.play();
             break;
     
         default:
