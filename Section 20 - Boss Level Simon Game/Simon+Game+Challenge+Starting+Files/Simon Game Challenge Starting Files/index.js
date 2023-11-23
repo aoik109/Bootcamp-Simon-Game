@@ -32,13 +32,39 @@ function playSound(randomButtonId) {
     var audioFileName = randomButtonId + ".mp3";
     var audioFile = new Audio("./sounds/" + audioFileName);
     audioFile.play();
-    buttonAnimation(randomButtonId);
+    if (randomButtonId !== "wrong") {
+        buttonAnimation(randomButtonId);
+    }
+    
 }
 
+// button animation
 function buttonAnimation(randomButtonId) {
     var idName = "#" + randomButtonId;
     $(idName).addClass("pressed");
     setTimeout(function() {
         $(idName).removeClass("pressed");
+    }, 200);
+}
+
+$("#green").click(function(){
+    var currentId = this.getAttribute("id");
+    playSound(currentId);
+    if (currentId === correctOrder[tempArray.length]) {
+        tempArray.push(currentId);
+    } else {
+        gameOver(currentId);
+    }
+});
+
+function gameOver(currentId) {
+    $("h1").text("Game Over, Press A Key to Start");
+    var idTag = "#" + currentId;
+    $(idTag).addClass("game-over");
+    $("body").addClass("game-over");
+    playSound("wrong");
+    setTimeout(function() {
+        $(idTag).removeClass("game-over");
+        $("body").removeClass("game-over");
     }, 200);
 }
