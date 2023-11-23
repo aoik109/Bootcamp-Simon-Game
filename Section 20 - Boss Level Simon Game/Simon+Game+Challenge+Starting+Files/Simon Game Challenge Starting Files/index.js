@@ -26,28 +26,15 @@ function pickAndPlayButton() {
     playSound(randomButtonId);
 }
 
+// creates audio file and plays it
+// also plays the animation
 function playSound(randomButtonId) {
     var audioFileName = randomButtonId + ".mp3";
     var audioFile = new Audio("./sounds/" + audioFileName);
-    switch (randomButtonId) {
-        case "green":
-            // TODO add animation to all buttons
-            audioFile.play();
-            break;
+    audioFile.play();
+    buttonAnimation(randomButtonId);
+}
 
-        case "red":
-            audioFile.play();
-            break;
+function buttonAnimation(randomButtonId) {
 
-        case "yellow":
-            audioFile.play();
-            break;
-
-        case "blue":
-            audioFile.play();
-            break;
-    
-        default:
-            break;
-    }
 }
