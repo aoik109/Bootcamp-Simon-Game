@@ -6,15 +6,12 @@ var buttons = $(".btn");
 
 // press any key to start
 $(document).keypress(function(){
-    if (levelNum === 1) {
-        playGame();
-    }
+    playGame();
 });
 
-$(document).click(function(){
-    if (levelNum === 1) {
-        playGame();
-    }
+$(".start-button").click(function(){
+    playGame();
+    $(".start-button").hide();
 });
 
 // plays the sound
@@ -84,6 +81,9 @@ function gameOver(currentId) {
     clearTempArray();
     clearCorrectOrder();
     levelNum = 1;
+    setTimeout(function(){
+        $(".start-button").show();
+    }, 300);
 }
 
 // clear tempArray because either (1) game over or (2) next level

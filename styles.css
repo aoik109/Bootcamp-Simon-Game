@@ -51,3 +51,25 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+.start-container {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.start-button {
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  border-radius: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.start {
+  margin: 37.5px;
+  font-family: 'Press Start 2P', cursive;
+}
