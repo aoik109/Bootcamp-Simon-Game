@@ -5,6 +5,7 @@ var tempArray = []; // holds the current level's input
 var buttons = $(".btn");
 
 // press any key to start
+// TODO ADD IF LEVEL = 1 function that prevents these two functions from executing
 $(document).keypress(function(){
     playGame();
 });
