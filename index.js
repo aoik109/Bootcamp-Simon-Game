@@ -11,6 +11,12 @@ $(document).keypress(function(){
     }
 });
 
+$(document).click(function(){
+    if (levelNum === 1) {
+        playGame();
+    }
+});
+
 // plays the sound
 function playGame() {
     $("h1").text("Level " + levelNum);
