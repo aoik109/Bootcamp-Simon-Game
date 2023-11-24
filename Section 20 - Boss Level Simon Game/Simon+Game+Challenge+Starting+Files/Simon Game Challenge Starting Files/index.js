@@ -6,7 +6,9 @@ var buttons = $(".btn");
 
 // press any key to start
 $(document).keypress(function(){
-    playGame();
+    if (levelNum === 1) {
+        playGame();
+    }
 });
 
 // plays the sound
@@ -46,7 +48,7 @@ function buttonAnimation(randomButtonId) {
 
 
 
-$("#green").click(function(){
+$(".btn").click(function(){
     var currentId = this.getAttribute("id");
     playSound(currentId);
     if (currentId === correctOrder[tempArray.length]) {
@@ -58,7 +60,7 @@ $("#green").click(function(){
     if (tempArray.length === levelNum) {
         clearTempArray();
         levelNum++;
-        playGame();
+        setTimeout(playGame, 1000);
     }
 });
 
