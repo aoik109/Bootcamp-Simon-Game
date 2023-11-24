@@ -12,10 +12,7 @@ $(document).keypress(function(){
 // plays the sound
 function playGame() {
     $("h1").text("Level " + levelNum);
-
-    if (levelNum === 1) {
-        pickAndPlayButton();
-    }
+    pickAndPlayButton();
 }
 
 // picks random button, adds to correctOrder array and plays sound
@@ -47,6 +44,8 @@ function buttonAnimation(randomButtonId) {
     }, 200);
 }
 
+
+
 $("#green").click(function(){
     var currentId = this.getAttribute("id");
     playSound(currentId);
@@ -55,8 +54,15 @@ $("#green").click(function(){
     } else {
         gameOver(currentId);
     }
+
+    if (tempArray.length === levelNum) {
+        clearTempArray();
+        levelNum++;
+        playGame();
+    }
 });
 
+// game over
 function gameOver(currentId) {
     $("h1").text("Game Over, Press A Key to Start");
     var idTag = "#" + currentId;
@@ -67,4 +73,20 @@ function gameOver(currentId) {
         $(idTag).removeClass("game-over");
         $("body").removeClass("game-over");
     }, 200);
+    clearTempArray();
+    clearCorrectOrder();
+    levelNum = 1;
+}
+
+// clear tempArray because either (1) game over or (2) next level
+function clearTempArray() {
+    while(tempArray.length > 0) {
+        tempArray.pop();
+    }
+}
+
+function clearCorrectOrder() {
+    while(correctOrder.length > 0) {
+        correctOrder.pop();
+    }
 }
