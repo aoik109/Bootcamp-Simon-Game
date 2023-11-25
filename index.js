@@ -1,24 +1,32 @@
 var correctOrder = []; // holds the correct sequence of buttons
 var levelNum = 1; // current level number
 var tempArray = []; // holds the current level's input
+var gameHasStarted = true;
 
 var buttons = $(".btn");
 
 // press any key to start
 // TODO ADD IF LEVEL = 1 function that prevents these two functions from executing
 $(document).keypress(function(){
-    playGame();
+    if (gameHasStarted === true) {
+        $(".start-button").hide();
+        setTimeout(function(){playGame();}, 500);
+        gameHasStarted = false;
+    };
 });
 
 $(".start-button").click(function(){
-    playGame();
-    $(".start-button").hide();
+    if (gameHasStarted === true) {
+        $(".start-button").hide();
+        setTimeout(function(){playGame();}, 500);
+        gameHasStarted = false;
+    }
 });
 
 // plays the sound
 function playGame() {
     $("h1").text("Level " + levelNum);
-    pickAndPlayButton();
+    setTimeout(function(){pickAndPlayButton();}, 100);
 }
 
 // picks random button, adds to correctOrder array and plays sound
@@ -47,7 +55,7 @@ function buttonAnimation(randomButtonId) {
     $(idName).addClass("pressed");
     setTimeout(function() {
         $(idName).removeClass("pressed");
-    }, 200);
+    }, 100);
 }
 
 
@@ -82,6 +90,7 @@ function gameOver(currentId) {
     clearTempArray();
     clearCorrectOrder();
     levelNum = 1;
+    gameHasStarted = true;
     setTimeout(function(){
         $(".start-button").show();
     }, 300);
